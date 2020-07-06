@@ -275,6 +275,7 @@ int Trueman20SecondsCheats::AutoMove()
   ip.ki.wScan = 0;   // hardware scan code for key
   ip.ki.time = 0;
   ip.ki.dwExtraInfo = 0;
+  int nStationaryCounter = 0;
 
   //初始化炮弹数量
   bRet = WriteProcessMemory(m_hGameProcess,
@@ -301,6 +302,26 @@ int Trueman20SecondsCheats::AutoMove()
     nPosX = pTmp->PosX;
     nPosY = pTmp->PosY;
     AdjustPosition(nPosX, nPosY);
+
+    if (nPosX == m_nPlaneCurrentPosX && nPosY == m_nPlaneCurrentPosY)
+    {
+        nStationaryCounter++;
+        /*if (nStationaryCounter < 0)*/
+        /*if (nStationaryCounter > 65535)
+        {
+            nStationaryCounter = 11;
+
+        }*/
+    }
+    else
+    {
+        nStationaryCounter = 0;
+    }
+
+    if (nStationaryCounter > 3 || nStationaryCounter < 0)
+    {
+        continue;
+    }
 
     //更新这个变量，给AutoNaviDlg使用
     m_nPlaneCurrentPosX = nPosX;
