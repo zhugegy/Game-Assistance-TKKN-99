@@ -6,7 +6,7 @@ An assistance tool for the classic game TKKN 99 (piloting the aircraft to dodge 
 
 For study purpose only.
 
-Video Demo: [Vimeo](https://vimeo.com/433939685)
+Video Demo: [Vimeo](https://vimeo.com/435638567)
 
 Executable File Download: [Google Drive](https://drive.google.com/drive/folders/1Q2gNeyNn-2QzIQPiTY1V_8Ie2vtigmuP?usp=sharing)
 
